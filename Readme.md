@@ -9,6 +9,7 @@
 * **源码**：源于tensorflow实战书中的第一个例子
 * **笔记**：
 
+| | |
 | -------- | -------- | 
 | ![](./image/Softmax-Regression/Softmax-Regression-1.jpg)  | ![](./image/Softmax-Regression/Softmax-Regression-2.jpg)    |
 | ![](./image/Softmax-Regression/Softmax-Regression-3.jpg)  | ![](./image/Softmax-Regression/Softmax-Regression-4.jpg)    | 
