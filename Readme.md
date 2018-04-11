@@ -1,8 +1,14 @@
-<h1>前言</h1>
+<h1>目录</h1>
+[一、前言](#1)<br>
+[二、Softmax Regression](#2)<br>
+[三、多层感知机](#3)<br>
+
+
+<h1 id='1'>前言</h1>
 
 &nbsp;&nbsp;&nbsp;&nbsp;在这个人工智能盛行的时代，希望有更多的小伙伴和我一起，在这条路上分享各自的经验。也请大牛们多多关照，您的宝贵意见一定能促使我成为一名优秀的人工智能开发者。<br>
 
-<h1>Softmax Regression</h1>
+<h1 id='2'>Softmax Regression</h1>
 
 &nbsp;&nbsp;&nbsp;&nbsp;作为人工智能学院的小生，跨出了第一步，写了第一个模型。步长平滑衰减，选用信息熵作为损失函数再加上一次L2正则化，加入隐含层偏执成为一个正统的神经网络。(数学原理压力大的还请补补高数吧 — —！)
 
@@ -21,7 +27,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/zchang81/article/details/70225220">tf.nn.softmax_cross_entropy_with_logits：</a>把softmax计算与cross entropy计算放到一起,提高计算效率。</br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/zchang81/article/details/70225220">Sigmoid/Tanh/ReLU：</a>不同激活函数有各自的特定。</br>
 
-<h1>多层感知机</h1>
+<h1 id='3'>多层感知机</h1>
 
 * **附**</br>
 
