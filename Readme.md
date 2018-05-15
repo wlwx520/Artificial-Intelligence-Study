@@ -10,16 +10,11 @@
 
 <h1 id='2'>Softmax Regression</h1>
 
-&nbsp;&nbsp;&nbsp;&nbsp;作为人工智能学院的小生，跨出了第一步，写了第一个模型。步长平滑衰减，选用信息熵作为损失函数再加上一次L2正则化，加入隐含层偏执成为一个正统的神经网络。(数学原理压力大的还请补补高数吧 — —！)
-
-* **数据集**：github上下载的MNIST数据
-* **源码**：源于tensorflow实战书中的第一个例子的扩展
-* **笔记**
-
-| | |
-| -------- | -------- | 
-| ![](./image/Softmax-Regression/Softmax-Regression-1.jpg)  | ![](./image/Softmax-Regression/Softmax-Regression-2.jpg)    |
-| ![](./image/Softmax-Regression/Softmax-Regression-3.jpg)  | ![](./image/Softmax-Regression/Softmax-Regression-4.jpg)    | 
+* **输入层:**mnist手写数字识别训练集-28*28只有灰度的图片数据展开成一维的向量784
+* **隐含层：**激活函数为Relu，权重w1，偏执b1
+* **输出层:**结果为0-9的数字，长度为10的向量。权重w2，偏执b2
+* **损失函数:**交叉熵
+* **其他:**使用L2正则化防止过度拟合，学习速率平滑递减提高学习效率
 
 * **附**</br>
 
@@ -28,6 +23,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/zchang81/article/details/70225220">Sigmoid/Tanh/ReLU：</a>不同激活函数有各自的特定。</br>
 
 <h1 id='3'>去噪自编码器</h1>
+
+* **输入层:**输入数据加上高斯噪音
+* **隐含层：**激活函数为传入，权重w1，偏执b1。该节点数小于输入层节点数
+* **输出层:**通过高阶特征重构源数据。权重w2，偏执b2
+* **损失函数:**平方误差
 
 * **附**</br>
 
