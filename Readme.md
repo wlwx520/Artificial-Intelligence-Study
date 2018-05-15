@@ -27,8 +27,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/zchang81/article/details/70225220">tf.nn.softmax_cross_entropy_with_logits：</a>把softmax计算与cross entropy计算放到一起,提高计算效率。</br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/zchang81/article/details/70225220">Sigmoid/Tanh/ReLU：</a>不同激活函数有各自的特定。</br>
 
-<h1 id='3'>多层感知机</h1>
+<h1 id='3'>去噪自编码器</h1>
 
 * **附**</br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/u010223750/article/details/60882390">限制性玻尔兹曼机：</a>一种具体特殊连接分布的神经网络。
+&nbsp;&nbsp;&nbsp;&nbsp;特点：希望输入与输出一致并且使用少量稀疏的高阶特征来重构自身。
+&nbsp;&nbsp;&nbsp;&nbsp;噪音：一般情况数据会加入噪音，在重复的学习后，无规律的噪音将被去除，这样我们就能从噪音中学习数据的特征。去噪自编码器中最常用的是<a href="https://blog.csdn.net/u012936765/article/details/53200918">加性高斯噪音</a>。
