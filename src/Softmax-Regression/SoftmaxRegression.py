@@ -140,7 +140,7 @@ def train(mnist):
 
 def main(argv=None):
     # 因为长城防火墙问题mnist的数据可能会下载不成功，这里给出一个地址可以先行下载 然后把数据放在你定义的路径下即可  https://github.com/golbin/TensorFlow-MNIST   这个地址下面有mnist的数据
-    mnist = input_data.read_data_sets("./../../data/Softmax-Regression",
+    mnist = input_data.read_data_sets("./../../data/mnist",
                                       one_hot=True)
     # print("训练数据",mnist.train.num_examples)
     #
