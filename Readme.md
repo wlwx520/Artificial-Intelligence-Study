@@ -44,8 +44,8 @@
 * **附**</br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;将一部分训练数据置为0，可避免在训练集上越来越精确，缺在测试集上越来越差，整个网络使用dropout减轻过拟合，自适应学习速率Adagrad，Relu激活函数避免梯度弥散。</br>
-&nbsp;&nbsp;&nbsp;&nbsp;Relu解决梯度弥散问题，而用softmax函数时，在0附近函数梯度较大，而向两边越来越小，导致模型的训练中根据梯度更新权重时效率很低。而且Relu函数还有单侧抑制，稀疏激活等特点。</br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.zhihu.com/question/52020211?from=profile_question_card">Relu函数单侧抑制性和稀疏激活性</a></br>
+&nbsp;&nbsp;&nbsp;&nbsp;Relu解决梯度弥散问题:用softmax函数时，在0附近函数梯度较大，而向两边越来越小，导致模型的训练中根据梯度更新权重时效率很低。而且Relu函数还有单侧抑制，稀疏激活等特点。</br>
+&nbsp;&nbsp;&nbsp;&nbsp;Relu函数:<a href="https://www.zhihu.com/question/52020211?from=profile_question_card">单侧抑制性和稀疏激活性</a></br>
 &nbsp;&nbsp;&nbsp;&nbsp;现在隐含层主要还是用Relu函数以及其变种（<a href="https://blog.csdn.net/u013146742/article/details/51986575">Leaky-ReLU、P-ReLU、R-ReLU等</a>）激活，对应输出层还是sigmoid函数，因为该函数在0-1，最接近概率分布</br>
 
 
