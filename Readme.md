@@ -52,7 +52,7 @@
 
 <h1 id='5'>简单的卷积网络</h1>
 
-* **输入层：** mnist手写数字识别训练集-28*28只有灰度的图片数据展开成一维的向量784</br>
+* **输入层：** mnist手写数字识别训练集</br>
 * **第一层卷积：** 卷积尺寸5*5，颜色1个通道，32个卷积核</br>
 * **第二层卷积：** 卷积尺寸5*5，上层32核，64个卷积核</br>
 * **隐含层：** 1024个节点，relu激活</br>
@@ -63,7 +63,7 @@
 
 * **附**</br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/bea_tree/article/details/51376577">卷积相关资料</a></br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/bea_tree/article/details/51376577">卷积网络</a>是一种前馈神经网络，它的人工神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色表现。它包括卷积层(convolutional layer)和池化层(pooling layer)。</br>
 
 
 
