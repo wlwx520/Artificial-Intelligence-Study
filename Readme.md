@@ -5,6 +5,7 @@
 [三、去噪自编码器](#3)<br>
 [四、多层感知机](#4)<br>
 [五、简单的卷积网络](#5)<br>
+[六、进阶的卷积网络](#6)<br>
 
 <h1 id='1'>前言</h1>
 
@@ -64,6 +65,18 @@
 * **附**</br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/bea_tree/article/details/51376577">卷积网络</a>是一种前馈神经网络，它的人工神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色表现。它包括卷积层(convolutional layer)和池化层(pooling layer)。</br>
+
+<h1 id='6'>进阶的卷积网络</h1>
+
+* **训练集：** cifar10训练集</br>
+* **LRN层：** 针对Relu函数这样的没边界的函数很有效，在卷积中挑选反应最大的</br>
+
+
+* **附**</br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/yangdashi888/article/details/77918311">LRN层</a>对局部神经元的活动创建竞争机制，使得其中响应比较大的值变得相对更大，并抑制其他反馈较小的神经元，增强了模型的泛化能力。</br>
+
+
 
 
 
