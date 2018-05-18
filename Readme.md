@@ -84,30 +84,32 @@
 * Adam 算法是什么，它为优化深度学习模型带来了哪些优势</br>
 * Adam 算法的原理机制是怎么样的，它与相关的 AdaGrad 和 RMSProp 方法有什么区别</br>
 * Adam 算法应该如何调参，它常用的配置参数是怎么样的</br>
-* Adam 的实现优化的过程和权重更新规则</br>
-* Adam 的初始化偏差修正的推导</br>
-* Adam 的扩展形式：AdaMax</br>
+
+
 
 * **什么是 Adam 优化算法？**</br>
 Adam 是一种可以替代传统随机梯度下降过程的一阶优化算法，它能基于训练数据迭代地更新神经网络权重。Adam 优化算法应用在非凸优化问题中所获得的优势：</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*直截了当地实现</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*高效的计算</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*所需内存少</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*梯度对角缩放的不变性（第二部分将给予证明）</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*适合解决含大规模数据和参数的优化问题</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*适用于非稳态（non-stationary）目标</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*适用于解决包含很高噪声或稀疏梯度的问题</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*超参数可以很直观地解释，并且基本上只需极少量的调参</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 直截了当地实现</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 高效的计算</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 所需内存少</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 梯度对角缩放的不变性（第二部分将给予证明）</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 适合解决含大规模数据和参数的优化问题</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 适用于非稳态（non-stationary）目标</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 适用于解决包含很高噪声或稀疏梯度的问题</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 超参数可以很直观地解释，并且基本上只需极少量的调参</br>
 
 </br>
 
-* **Adam 优化算法的基本机制**</br>
-Adam 通过计算梯度的一阶矩估计和二阶矩估计而为不同的参数设计独立的自适应性学习率。</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*适应性梯度算法（AdaGrad）为每一个参数保留一个学习率以提升在稀疏梯度（即自然语言和计算机视觉问题）上的性能。</br>
-&nbsp;&nbsp;&nbsp;&nbsp;*均方根传播（RMSProp）基于权重梯度最近量级的均值为每一个参数适应性地保留学习率。这意味着算法在非稳态和在线问题上有很有优秀的性能。</br>
-Adam 算法同时获得了 AdaGrad 和 RMSProp 算法的优点。Adam 不仅如 RMSProp 算法那样基于一阶矩均值计算适应性参数学习率，它同时还充分利用了梯度的二阶矩均值（即有偏方差/uncentered variance）。具体来说，算法计算了梯度的指数移动均值（exponential moving average），超参数 beta1 和 beta2 控制了这些移动均值的衰减率。移动均值的初始值和 beta1、beta2 值接近于 1（推荐值），因此矩估计的偏差接近于 0。该偏差通过首先计算带偏差的估计而后计算偏差修正后的估计而得到提升。</br>
+* **Adam 优化算法的基本机制,它与相关的 AdaGrad 和 RMSProp 方法有什么区别**</br>
+Adam 通过计算梯度的一阶矩估计和二阶矩估计而为不同的参数设计独立的自适应性学习率。接下来看看Adam和AdaGrad，RMSProp的区别</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 适应性梯度算法（AdaGrad）为每一个参数保留一个学习率以提升在稀疏梯度（即自然语言和计算机视觉问题）上的性能。</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* 均方根传播（RMSProp）基于权重梯度最近量级的均值为每一个参数适应性地保留学习率。这意味着算法在非稳态和在线问题上有很有优秀的性能。</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* Adam 算法同时获得了 AdaGrad 和 RMSProp 算法的优点。Adam 不仅如 RMSProp 算法那样基于一阶矩均值计算适应性参数学习率，它同时还充分利用了梯度的二阶矩均值（即有偏方差/uncentered variance）。具体来说，算法计算了梯度的指数移动均值（exponential moving average），超参数 beta1 和 beta2 控制了这些移动均值的衰减率。移动均值的初始值和 beta1、beta2 值接近于 1（推荐值），因此矩估计的偏差接近于 0。该偏差通过首先计算带偏差的估计而后计算偏差修正后的估计而得到提升。</br>
 
-
-
+* **Adam 的参数配置**</br>
+&nbsp;&nbsp;&nbsp;&nbsp;* alpha：同样也称为学习率或步长因子，它控制了权重的更新比率（如 0.001）。较大的值（如 0.3）在学习率更新前会有更快的初始学习，而较小的值（如 1.0E-5）会令训练收敛到更好的性能
+&nbsp;&nbsp;&nbsp;&nbsp;* beta1：一阶矩估计的指数衰减率（如 0.9）
+&nbsp;&nbsp;&nbsp;&nbsp;* beta2：二阶矩估计的指数衰减率（如 0.999）。该超参数在稀疏梯度（如在 NLP 或计算机视觉任务中）中应该设置为接近 1 的数
+&nbsp;&nbsp;&nbsp;&nbsp;* epsilon：该参数是非常小的数，其为了防止在实现中除以零（如 10E-8）
 
 
