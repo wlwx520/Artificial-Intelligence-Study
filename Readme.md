@@ -80,7 +80,6 @@
 <h1 id='7'>Adam优化算法</h1>
 
 现在，我们详细的了解下Adam算法，我们从以下几个方面来说明该算法。</br>
-
 &nbsp;&nbsp;&nbsp;&nbsp;Adam 算法是什么，它为优化深度学习模型带来了哪些优势</br>
 &nbsp;&nbsp;&nbsp;&nbsp;Adam 算法的原理机制是怎么样的，它与相关的 AdaGrad 和 RMSProp 方法有什么区别</br>
 &nbsp;&nbsp;&nbsp;&nbsp;Adam 算法应该如何调参，它常用的配置参数是怎么样的</br>
