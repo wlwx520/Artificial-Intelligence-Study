@@ -84,8 +84,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Adam 算法的原理机制是怎么样的，它与相关的 AdaGrad 和 RMSProp 方法有什么区别</br>
 &nbsp;&nbsp;&nbsp;&nbsp;Adam 算法应该如何调参，它常用的配置参数是怎么样的</br>
 
-
-
 * **什么是 Adam 优化算法？**</br>
 Adam 是一种可以替代传统随机梯度下降过程的一阶优化算法，它能基于训练数据迭代地更新神经网络权重。Adam 优化算法应用在非凸优化问题中所获得的优势：</br>
 &nbsp;&nbsp;&nbsp;&nbsp;* 直截了当地实现</br>
@@ -96,8 +94,6 @@ Adam 是一种可以替代传统随机梯度下降过程的一阶优化算法，
 &nbsp;&nbsp;&nbsp;&nbsp;* 适用于非稳态（non-stationary）目标</br>
 &nbsp;&nbsp;&nbsp;&nbsp;* 适用于解决包含很高噪声或稀疏梯度的问题</br>
 &nbsp;&nbsp;&nbsp;&nbsp;* 超参数可以很直观地解释，并且基本上只需极少量的调参</br>
-
-</br>
 
 * **Adam 优化算法的基本机制,它与相关的 AdaGrad 和 RMSProp 方法有什么区别**</br>
 Adam 通过计算梯度的一阶矩估计和二阶矩估计而为不同的参数设计独立的自适应性学习率。接下来看看Adam和AdaGrad，RMSProp的区别</br>
